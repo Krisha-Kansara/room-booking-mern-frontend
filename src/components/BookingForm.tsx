@@ -51,7 +51,7 @@ export default function BookingForm() {
     validationSchema: validationSchema,
     onSubmit: async (values, { resetForm }) => {
       try {
-        const response = await axios.post('http://localhost:5000/bookRoom', values);
+        const response = await axios.post('http://localhost:5000/book', values);
 
         if (response.status === 201) {
           setStatusMessage(`${response.data.message || 'Room booked successfully!'}`);
